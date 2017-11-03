@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+<style>
+	body,html {
+		width: 100%;height: 100%;
+	}
+	* {
+		margin: 0px;padding: 0px;
+	}
+	li {
+		list-style: none
+	}
+	.maxbox {
+		min-width: 1100px;
+		overflow: hidden;
+	}
+	.maxbox .page3 {
+		background: url(./page3.jpg) top center no-repeat;height: 1013px;
+	}
+	.maxbox .page3 .page3_jz {
+		width: 1000px;height: 1013px;margin: 0 auto;position: relative;overflow: hidden;
+	}
+	.maxbox .page3 .page3_jz .page3_txt {
+		position: relative;top: 240px;
+	}
+	.maxbox .page3 .page3_jz .page3_txt li {
+	position: absolute;opacity: 0
+	}
+	/**/
+	.maxbox .page3 .page3_jz .page3_pic {
+		position: relative;top: 600px;display: flex;width: 485px;height: 530px;margin: 0 auto;
+	}
+	.maxbox .page3 .page3_jz .page3_pic li {
+		position: absolute;
+	}
+	.maxbox .page3 .page3_jz .page3_pic li:nth-child(1) {
+		width: 485px;height: 530px;top: 0px;left: 0px;z-index: 3
+	}
+	.maxbox .page3 .page3_jz .page3_pic li:nth-child(2) {
+		width: 260px;height: 200px;top: -80px;left: -200px;
+	}
+	.maxbox .page3 .page3_jz .page3_pic li:last-child {
+		width: 260px;height: 200px;top: -80px;left: 450px;
+	}
+	.maxbox .page3 .page3_jz .page3_pic li img {
+		width: 100%
+	}
+	/**/
+	.maxbox .page3 .page3_jz .yuan {
+		width: 100px;height: 19px;display: flex;justify-content: space-between;
+		position: absolute;bottom: 20px;left: 50%;margin-left: -50px; z-index: 1000
+	}
+	.maxbox .page3 .page3_jz .yuan li {
+		width: 16px;height: 16px;background: #ddd;border-radius: 50%; 
+	}
+	.maxbox .page3 .page3_jz .yuan .active {
+		background: #222;
+	}
+</style>
+<body>
+  <div class="maxbox">
+		<div class="page3">
+			<div class="page3_jz">
+				<ul class="page3_txt">
+					<li><img src="./gexing.png" alt="图片正在加载"></li>			
+					<li><img src="./zhuanye.png" alt="图片正在加载"></li>
+					<li><img src="./yijie.png" alt="图片正在加载"></li>
+				</ul>
+				<!--上面文字图片-->
+				<ul class="page3_pic">
+					<li><img src="./gx.png" alt="图片正在加载"></li>
+					<li><img src="./zy.png" alt="图片正在加载"></li>
+					<li><img src="./yj.png" alt="图片正在加载"></li>
+				</ul>
+				<!--旋转图片-->
+				<ul class="yuan">
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<!--下面打点-->
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+
+function nextPic(){
+	move();
+	var first = picPosition.shift();
+	picPosition.push(first);
+	
+}
+/*图片位置数组滚动*/
+var picPosition = [
+			{ width: 485,height: 530,top: 0,left: 0,'z-index': 3},
+			{ width: 260, height: 200, top: -80, left: -200,'z-index': 2},
+			{ width: 260, height: 200, top: -80, left: 450,'z-index': 1}
+		]
+		/*图片位置*/
+function move() {
+	for (var i = 0; i < picPosition.length; i++) {
+		var data = picPosition[i];
+		$('.page3_pic li').eq(i).css('z-index',data['z-index']);// 防止图片乱重叠
+		$('.page3_pic li').eq(i).stop(true).animate(data, 1000);
+	}
+}
+/*图片旋转*/
+
+var index = 0,time = '';
+
+	qiehuan()
+	function qiehuan() {
+	if (index > 1) {
+		all();
+		index = 0
+	} else {
+		all();
+		index++
+	}
+} 
+/*上方文字和下面点切换*/ 
+$('.page3_pic').hover(function(){
+		clearTimeout(time)
+	},function(){
+		clearTimeout(time)
+		qiehuan()
+	});
+	/*鼠标移动停止，移出滚动*/
+function all() {
+	$('.page3_txt li').removeClass().css('z-index',0).eq(index).css('z-index',1).addClass('animated fadeIn','animated fadeOut');
+		$('.yuan li').removeClass().eq(index).addClass('active');
+		nextPic();//图片滚动
+		time = setTimeout('qiehuan()',3000);
+}
+
+</script>
+</html>

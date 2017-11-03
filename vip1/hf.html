@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+	</script>
+</head>
+<style>
+  body,html {
+    width: 100%;height: 100%
+  }
+  * {
+    margin: 0px;padding: 0px;
+  }
+  a {
+    text-decoration: none;color: #222;
+  }
+  li {
+    list-style: none;
+  }
+	/*全局*/
+  .maxbox .banner {
+		min-width: 1000px;
+    background: url(http://cdn.vip.hfjy.com/newtpl/static/imgs/2017xkpy/banner.jpg) top center no-repeat
+  }
+  .maxbox .banner .banner_jz {
+    height:600px;margin: 0 auto;position: relative;width: 1000px;
+  }
+	.maxbox .banner .banner_jz .banner_btn {
+		position: absolute;cursor: pointer;top: 450px;left: 363px;
+	}
+	/*banner*/
+  .maxbox .page1 {
+		min-width: 1000px;
+    background: url(http://cdn.vip.hfjy.com/newtpl/static/imgs/2017xkpy/page1.jpg) top center no-repeat
+  }
+  .maxbox .page1 .page1_jz {
+    height: 1189px;margin: 0 auto;position: relative;width: 1000px;
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 {
+    position: absolute;top: 176px;left: 56px;cursor: pointer;
+  }
+  .maxbox .page1 .page1_jz .page1_btn2 {
+    position: absolute;bottom: 40px;left: 128px;cursor: pointer;
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box {
+    width: 893px;height: 843px;
+  }
+	.maxbox .page1 .page1_jz .page1_btn1 .box .yuan {
+		background: rgb(236, 202,104);border-radius: 50%;display: flex;justify-content: center;
+		align-items: center;
+	}
+  .maxbox .page1 .page1_jz .page1_btn1 .box .yuan1 {
+    position: absolute;width: 305px;height: 305px;
+   	top: 0px;left: 150px; 
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box .yuan1 .yuan1_inner {
+		width: 280px;height: 280px;display: flex;flex-direction: column;
+		border: 3px solid #fff;
+  }
+	.maxbox .page1 .page1_jz .page1_btn1 .box .yuan2 {
+		position: absolute;width: 250px;height: 250px;top: 40px;right: 125px;
+	}
+  .maxbox .page1 .page1_jz .page1_btn1 .box .yuan2 .yuan2_inner {
+		display: flex;flex-direction: column;width: 230px;height: 230px;
+		border: 3px solid #fff;
+	}
+	.maxbox .page1 .page1_jz .page1_btn1 .box .yuan3 {
+		position: absolute;width: 270px;height: 270px;bottom: 0px;right: 0px;
+	}
+  .maxbox .page1 .page1_jz .page1_btn1 .box .yuan3 .yuan3_inner {
+		display: flex;flex-direction: column;width: 250px;height: 250px;
+		border: 3px solid #fff;
+	}
+	.maxbox .page1 .page1_jz .page1_btn1 .box .yuan4 {
+		position: absolute;width: 230px;height: 230px;bottom: 13px;left: 40px;
+	}
+  .maxbox .page1 .page1_jz .page1_btn1 .box .yuan4 .yuan4_inner {
+		display: flex;flex-direction: column;width: 210px;height: 210px;
+		border: 3px solid #fff;
+	}
+	.maxbox .page1 .page1_jz .page1_btn1 .box .yuan5 {
+		position: absolute;width: 185px;height: 185px;bottom: 336px;left: 0px;
+	}
+  .maxbox .page1 .page1_jz .page1_btn1 .box .yuan5 .yuan5_inner {
+		display: flex;flex-direction: column;width: 165px;height: 165px;
+		border: 3px solid #fff;
+	}
+	.maxbox .page1 .page1_jz .page1_btn1 .box .yuan6 {
+		position: absolute;width: 170px;height: 170px;bottom: 360px;right: 0px;
+	}
+  .maxbox .page1 .page1_jz .page1_btn1 .box .yuan6 .yuan6_inner {
+		display: flex;flex-direction: column;width: 150px;height: 150px;
+		border: 3px solid #fff;
+	}
+	.maxbox .page1 .page1_jz .page1_btn1 .box .bianda {
+    transform: scale(1.1);transition: all 1s ease;
+		-ms-transform: scale(1.1);
+		-moz-transform: scale(1.1);
+		-webkit-transform: scale(1.1);
+		-o-transform: scale(1.1);
+		-ms-transition:  all 1s ease;
+		-moz-transition:  all 1s ease;
+		-webkit-transition:  all 1s ease;
+		-o-transition:  all 1s ease;
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box .bianxiao {
+    transform: scale(1);transition: all 1s ease;
+		-ms-transform: scale(1);
+		-moz-transform: scale(1);
+		-webkit-transform: scale(1);
+		-o-transform: scale(1);
+		-ms-transition:  all 1s ease;
+		-moz-transition:  all 1s ease;
+		-webkit-transition:  all 1s ease;
+		-o-transition:  all 1s ease;
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box .text1 {
+    font-size: 55px;font-weight: 400
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box .txt1 {
+    font-size: 38px;
+		padding-left: 24px;
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box .text2 {
+    font-size: 42px;font-weight: 400
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box .txt2 {
+    font-size: 30px;padding-left: 22px 
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box .text3 {
+    font-size: 47px;font-weight: 500
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box .txt3 {
+    font-size: 30px;padding-left: 22px 
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box .text4 {
+		font-size: 40px;font-weight: 500
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box .txt4 {
+    font-size: 28px;padding-left: 12px  
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box .text5 {
+		font-size: 27px;font-weight: 500
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box .txt5 {
+    font-size: 22px;padding-left: 12px;font-weight: 500
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box .text6 {
+		font-size: 25px;font-weight: 600
+  }
+  .maxbox .page1 .page1_jz .page1_btn1 .box .txt6 {
+    font-size: 16px;padding-left: 12px;font-weight: 600
+  }
+	/*page1 移动变大变小效果*/
+
+	.maxbox .page2 {
+		min-width: 1000px;
+		background: url(./page2.jpg) top center no-repeat
+	}
+	.maxbox .page2 .page2_jz {
+		margin: 0 auto;height: 820px;position: relative;width: 1000px;
+	}
+	.maxbox .page2 .page2_jz .tab {
+		height: 160px;width: 100%;position: absolute;top: 190px;
+		display: flex;justify-content: space-around;
+	}
+	.maxbox .page2 .page2_jz .tab li {
+		width: 280px;height: 100%;display: flex;flex-direction: column;align-items: center;	
+		box-sizing: border-box;border: 3px solid rgb(236, 202,104);cursor: pointer
+	}
+	.maxbox .page2 .page2_jz .tab .active {
+		background: rgb(236, 202,104); transform: scale(1.1);transition: all 1s ease 
+	}
+	.maxbox .page2 .page2_jz .tab li .actives {
+		background: #222; 
+	}
+	.maxbox .page2 .page2_jz .tab li h1 {
+		height: 69px;font-weight: 100;font-size: 50px; 
+	}
+	.maxbox .page2 .page2_jz .tab li h2 {
+		margin-top: 15px; 
+	}
+	.maxbox .page2 .page2_jz .tab li h3 {
+		font-size: 18px;margin-top: 5px;font-weight: 500  
+	}
+	.maxbox .page2 .page2_jz .tab li .xuanzhong {
+		width: 100%;height: 100%;
+		background: rgb(236, 202,104);
+	}
+	.maxbox .page2 .page2_jz .tab li span {
+		width: 28px;height: 4px;background: rgb(236, 202,104);
+	}
+	.maxbox .page2 .page2_jz .showgif {
+		width: 641px;height: 387px;position: absolute;top: 434px;left: 50%;overflow: hidden;margin-left: -321px
+
+	}
+	.maxbox .page2 .page2_jz .showgif img {
+		
+	}
+	/*page2 动效*/
+	.maxbox .page3 {
+		min-width: 1000px;
+		background: url(http://cdn.vip.hfjy.com/newtpl/static/imgs/2017xkpy/page3.jpg) top center no-repeat
+	}
+	.maxbox .page3 .page3_jz {
+		margin: 0 auto;height: 1372px;width: 1000px;position: relative
+	}
+	.maxbox .page3 .page3_jz .page3_btn {
+		position: absolute;cursor: pointer;bottom: 50px;left: 379px;
+	}
+	.maxbox .page4 {
+		background: url(http://cdn.vip.hfjy.com/newtpl/static/imgs/2017xkpy/page4.jpg) top center no-repeat
+	}
+	.maxbox .page4 .page4_jz {
+		margin: 0 auto;height: 614px;width: 1000px;position: relative
+	}
+	.maxbox .page4 .page4_jz .page4_btn {
+		position: absolute;cursor: pointer;bottom: 36px;left: 363px;
+	}
+	.maxbox .page5 {
+		background: url(http://cdn.vip.hfjy.com/newtpl/static/imgs/2017xkpy/page5.jpg) top center no-repeat
+	}
+	.maxbox .page5 .page5_jz {
+		margin: 0 auto;height: 1140px;width: 1000px;position: relative
+	}
+</style>
+<body>
+	<div class="maxbox">
+		<div class="banner">
+			<div class="banner_jz">
+				<a class="banner_btn" href="http://vip.hfjy.com/53talk/" target="_blank">
+					<img src="http://cdn.vip.hfjy.com/newtpl/static/imgs/2017xkpy/banner_btn.png?v=1.0.9">
+				</a>
+			</div>
+		</div>
+	
+		<div class="page1">
+			<div class="page1_jz">
+				<a class="page1_btn1"  href="http://vip.hfjy.com/53talk/" target="_blank">
+					<div class="box">
+						<div class="yuan1 yuan">
+							<div class="yuan1_inner yuan">
+								<h1 class="text1">苦苦努力</h1>
+								<p class="txt1">还是成绩差？</p>
+							</div>
+						</div>
+						<div class="yuan2 yuan">
+							<div class="yuan2_inner yuan">
+								<h1 class="text2">基础薄弱</h1>
+								<p class="txt2">学习没信心？</p>
+							</div>
+						</div>
+						<div class="yuan3 yuan">
+							<div class="yuan3_inner yuan">
+								<h1 class="text3">老换家教</h1>
+								<p class="txt3">还是不见效？</p>
+							</div>
+						</div>
+						<div class="yuan4 yuan">
+							<div class="yuan4_inner yuan">
+								<h1 class="text4">恐惧考试</h1>
+								<p class="txt4">考分总不高？</p>
+							</div>
+						</div>
+						<div class="yuan5 yuan">
+							<div class="yuan5_inner yuan">
+								<h1 class="text5">上课注意力</h1>
+								<p class="txt5">总是不集中？</p>
+							</div>
+						</div>
+						<div class="yuan6 yuan">
+							<div class="yuan6_inner yuan">
+								<h1 class="text6">课外时间少</h1>
+								<p class="txt6">想补但是没时间？</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a class="page1_btn2"  href="http://vip.hfjy.com/53talk/" target="_blank">
+					<img src="http://cdn.vip.hfjy.com/newtpl/static/imgs/2017xkpy/page1_btn2.png?v=1.0.9">
+				</a>
+			</div>
+		</div>
+		<!--动态变化-->
+		<div class="page2">
+			<div class="page2_jz">
+				<ul class="tab">
+					<li>
+						<h1>01</h1>
+						<span></span>
+						<h2>学习数据智能统计</h2>
+						<h3>精准定位薄弱环节,补习更针对</h3>
+					</li>
+					<li>
+						<h1>02</h1>
+						<span></span>
+						<h2>智能错题本功能</h2>
+						<h3>识别薄弱知识点,类似题型推送</h3>
+					</li>
+					<li>
+						<h1>03</h1>
+						<span></span>
+						<h2>上课过程自动录制</h2>
+						<h3>永久保留不丢失，可复习可监督</h3>
+					</li>
+				</ul>
+				<div class="showgif">
+					<img src="" alt="">
+				</div>
+			</div>
+		</div>
+		<!--gif轮动-->
+		<div class="page3">
+			<div class="page3_jz">
+				<a class="page3_btn"  href="http://vip.hfjy.com/53talk/" target="_blank">
+					<img src="http://cdn.vip.hfjy.com/newtpl/static/imgs/2017xkpy/page3_btn.png?v=1.0.9">
+				</a>
+			</div>
+		</div>
+
+		<div class="page4">
+			<div class="page4_jz">
+				<a class="page4_btn" href="http://vip.hfjy.com/53talk/" target="_blank">
+					<img src="http://cdn.vip.hfjy.com/newtpl/static/imgs/2017xkpy/page4_btn.png?v=1.0.9">
+				</a>
+			</div>
+		</div>
+
+		<div class="page5">
+			<div class="page5_jz"></div>
+		</div>
+	</div>    
+</body>
+<script>
+var index = 0,time = '',moveindex = 0;
+var x = ['./tg/shuju.gif','./tg/cuoti.gif','./tg/luzhi.gif'];
+$(function(){
+	dong();
+	$('.tab li').mouseenter(function(){	
+		clearTimeout(time);          //清计时器
+		$('.tab li').removeClass();      
+		$('.tab li span').removeClass();
+		$(this).addClass('active');
+		$(this).find('span').addClass('actives');
+		moveindex = $(this).index();
+		$('.showgif img').attr('src',x[moveindex]);   //鼠标移动切换图片，		
+	}).mouseleave(function(){   
+		index = moveindex;
+		dong()		
+	})//鼠标移入移出 效果
+})
+function addpic(index) {
+	$('.tab li').removeClass();
+	$('.tab li span').removeClass();
+	$('.tab li').eq(index).addClass('active');
+	$('.tab li span').eq(index).addClass('actives');
+	$('.showgif img').attr('src',x[index]);
+	time = setTimeout('dong()',4000);	
+}  //自动切换图片，
+function dong() {
+	if(index >2) {
+		index = 0;
+		addpic(index)
+	} else {
+		addpic(index)	
+	}
+		index++;	
+}//自动滚动
+$('.yuan').mouseover(function(){
+	$(this).addClass('bianda').removeClass('bianxiao')
+}).mouseleave(function(){
+	$(this).removeClass('bianda').addClass('bianxiao')
+})
+	// 鼠标移上去放大缩小
+</script>
+</html>

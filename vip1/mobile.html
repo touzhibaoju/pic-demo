@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+	</script>
+	<script>	
+		!function(){
+			var htmlEl = document.getElementsByTagName('html')[0];
+			var fitPage = function(){
+					/* The calculate of with from zepto  */
+					var w = htmlEl.getBoundingClientRect().width;
+					w = Math.round(w);
+					w = w > 750 ? 750: w;
+					var newW = w/750 * 100;
+					htmlEl.style.fontSize = newW + 'px';
+			}
+			fitPage();
+
+			var t;
+			var func = function(){
+					clearTimeout(t);
+					t = setTimeout(fitPage, 25);
+			}
+			window.addEventListener('resize', func);
+		}();
+	</script>
+</head>
+<style>
+	body,html {
+		height: 100%;width: 100%;
+	}
+	* {
+		margin: 0px;padding: 0px;box-sizing: border-box;
+	}
+	li {
+		list-style: none
+	}
+	.content {
+    max-width: 750px;margin: 0 auto;
+	}
+	.content .bg {
+    width: 100%;display: block;position: relative;
+	}
+	.content .bg img {
+    width: 7.5rem;display: block;
+	}
+	.content .bg .tab {
+    position: absolute;top: 1rem;width: 7.5rem;
+    display: flex;justify-content: space-around;
+	}
+	.content .bg .tab li {
+		width: 32%;border: 3px solid rgb(236, 202,104);display: flex;flex-direction: column;
+		align-items: center;text-align: center
+	}
+	.content .bg .tab li h1 {
+		font-size: 0.3rem;font-weight: 100;
+	}
+	.content .bg .tab li span {
+		width: 0.2rem;height: 0.05rem;background: rgb(236, 202,104);
+	}
+	.content .bg .tab li h2 {
+		font-size: 0.2rem
+	}
+	.content .bg .tab li h3 {
+		font-size: 0.2rem;font-weight: 500;padding: 0 0.3rem; 
+	}
+	.content .bg .tab .active {
+		background: rgb(236, 202,104)
+	}
+	.content .bg .tab li .actives {
+		background: #222;
+	}
+	.content .bg .showgif {
+		position: absolute;top: 3.49rem;left: 1.63rem;width: 4.2rem;height: 2.62rem;
+	}
+	.content .bg .showgif img {
+		width: 100%
+	}
+</style>
+<body>
+	<section class="content">
+		<div class="bg">
+			<img src="./img_04.jpg" alt="">
+			<ul class="tab">
+				<li>
+					<h1>01</h1>
+					<span></span>
+					<h2>学习数据智能统计</h2>
+					<h3>精准定位薄弱环节,补习更针对</h3>
+				</li>
+				<li>
+					<h1>02</h1>
+					<span></span>
+					<h2>智能错题本功能</h2>
+					<h3>识别薄弱知识点,类似题型推送</h3>
+				</li>
+				<li>
+					<h1>03</h1>
+					<span></span>
+					<h2>上课过程自动录制</h2>
+					<h3>永久保留不丢失,可复习可监督</h3>
+				</li>
+			</ul>
+			<div class="showgif">
+				<img src="" alt="">
+			</div>
+		</div>
+	</section>
+</body>
+<script>
+var index = 0,time = '',moveindex = 0;
+var x = ['./tg/shuju.gif','./tg/cuoti.gif','./tg/luzhi.gif'];
+$(function(){
+	dong();
+	$('.tab li').mouseenter(function(){	
+		clearTimeout(time);          //清计时器
+		$('.tab li').removeClass();      
+		$('.tab li span').removeClass();
+		$(this).addClass('active');
+		$(this).find('span').addClass('actives');
+		moveindex = $(this).index();
+		$('.showgif img').attr('src',x[moveindex]);   //鼠标移动切换图片，		
+	}).mouseleave(function(){   
+		index = moveindex;
+		dong()		
+	})//鼠标移入移出 效果
+})
+function addpic(index) {
+	$('.tab li').removeClass();
+	$('.tab li span').removeClass();
+	$('.tab li').eq(index).addClass('active');
+	$('.tab li span').eq(index).addClass('actives');
+	$('.showgif img').attr('src',x[index]);
+	time = setTimeout('dong()',4000);	
+}  //自动切换图片，
+function dong() {
+	if(index >2) {
+		index = 0;
+		addpic(index)
+	} else {
+		addpic(index)	
+	}
+		index++;	
+}//自动滚动
+</script>
+</html>
